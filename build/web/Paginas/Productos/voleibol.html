@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ColSports - Tienda de Voleibol</title>
+    <link rel="icon" href="../../Imagenes/Logo.jpeg" type="image/x-icon">
+    <link rel="stylesheet" href="../../Styles/style_IndexPage.css" />
+    <script>
+        let carrito = [];
+
+        function agregarAlCarrito(nombre, precio) {
+            const producto = { nombre, precio };
+            carrito.push(producto);
+            alert(`${nombre} ha sido agregado al carrito!`);
+            actualizarCarrito();
+        }
+
+        function actualizarCarrito() {
+            const carritoDiv = document.getElementById('carrito');
+            carritoDiv.innerHTML = '';
+
+            carrito.forEach((producto, index) => {
+                const productoDiv = document.createElement('div');
+                productoDiv.innerHTML = `${producto.nombre} - $${producto.precio.toLocaleString('es-CO')} <button onclick="eliminarDelCarrito(${index})">Eliminar</button>`;
+                carritoDiv.appendChild(productoDiv);
+            });
+
+            const totalDiv = document.createElement('div');
+            const total = carrito.reduce((acc, producto) => acc + producto.precio, 0);
+            totalDiv.innerHTML = `<strong>Total: $${total.toLocaleString('es-CO')}</strong>`;
+            carritoDiv.appendChild(totalDiv);
+
+            // Agregar botón de pagar
+            const pagarBtn = document.createElement('button');
+            pagarBtn.textContent = 'Pagar';
+            pagarBtn.style.display = 'block';
+            pagarBtn.style.marginTop = '10px';
+            pagarBtn.style.padding = '10px';
+            pagarBtn.style.backgroundColor = '#28a745';
+            pagarBtn.style.color = 'white';
+            pagarBtn.style.border = 'none';
+            pagarBtn.style.cursor = 'pointer';
+            pagarBtn.onclick = pagar;
+            carritoDiv.appendChild(pagarBtn);
+        }
+
+        function eliminarDelCarrito(index) {
+            carrito.splice(index, 1);
+            actualizarCarrito();
+        }
+
+        function pagar() {
+            if (carrito.length === 0) {
+                alert('El carrito está vacío. No hay nada para pagar.');
+            } else {
+                alert('Pago realizado con éxito. ¡Gracias por su compra!');
+                carrito = []; // Vaciar el carrito después de pagar
+                actualizarCarrito();
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="banner">
+            <img class="banner-img" src="../../Imagenes/Logo.jpeg" alt="Logo Tienda" id="logo"/>
+            <h1>Voleibol - ColSports</h1>
+            <nav class="menu">
+                <div class="menu-item">
+                    <a href="../../index.html">Inicio</a>
+                </div>
+                <div class="menu-item">
+                    <a href="../FormularioCuento.jsp">Generar Cuento</a>
+                </div>
+                <div class="menu-item">
+                    <a href="#">Productos</a>
+                    <div class="dropdown">
+                        <a href="futbol.html">Futbol</a>
+                        <a href="baloncesto.html">Baloncesto</a>
+                        <a href="voleibol.html">Voleibol</a>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <a href="../Contactenos.html">Contactenos</a>
+                </div>
+                <div class="menu-item">
+                    <a href="../FormularioCotizacion.jsp">Solicitud de Cotización</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <br>
+
+    <div class="div-principal">
+        <h1>Tienda de Voleibol</h1>
+        <div class="productos">
+            <div class="producto">
+                <img src="../../Imagenes/balon_voleibol.jpg" alt="Balón de voleibol" width="300"/>
+                <h2>Balón de voleibol</h2>
+                <p>Precio: $180.000</p>
+                <button onclick="agregarAlCarrito('Balón de voleibol', 180000)">Agregar al carrito</button>
+            </div>
+            <div class="producto">
+                <img src="../../Imagenes/zapatillas_voleibol.jpg" alt="Zapatillas de voleibol" width="500"/>
+                <h2>Zapatillas de voleibol</h2>
+                <p>Precio: $700.000</p>
+                <button onclick="agregarAlCarrito('Zapatillas de voleibol', 700000)">Agregar al carrito</button>
+            </div>
+            <div class="producto">
+                <img src="../../Imagenes/camiseta_voleibol.jpg" alt="Camiseta de voleibol" width="300"/>
+                <h2>Camiseta de voleibol</h2>
+                <p>Precio: $220.000</p>
+                <button onclick="agregarAlCarrito('Camiseta de voleibol', 220000)">Agregar al carrito</button>
+            </div>
+        </div>
+        <br />
+        <h2>Carrito de compras</h2>
+        <div id="carrito"></div>
+    </div>
+</body>
+</html>

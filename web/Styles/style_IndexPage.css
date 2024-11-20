@@ -1,0 +1,382 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url("../Imagenes/FondoPage.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;    
+}
+.banner {
+    background-color: #1E90FF;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.banner-img {
+    width: 80px;
+    height: 80px;
+}
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+.menu {
+    display: flex;
+}
+.menu-item {
+    position: relative;
+    margin-left: 20px;
+    font-weight: bold;
+    color: black;
+    padding: auto;
+}
+.menu-item > a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+.dropdown {
+    display: none;
+    position: absolute;
+    background-color: #a0a9b6;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 10px;
+    z-index: 1;
+}
+.menu-item:hover .dropdown {
+    display: block;
+}
+.dropdown a {
+    display: block;
+    color: #333;
+    text-decoration: none;
+    padding: 5px 0;
+}
+.dropdown a:hover {
+    background-color: #bcc1c7;
+}
+.div-principal{
+    background-color: rgba(255, 255, 255, 0.747);
+    width: 95%;
+    height: 95%;            
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.div-principal-index{
+  display: flex; /* Aplica flexbox para alinear elementos en fila */
+  flex-direction: column; /* Apila los elementos verticalmente */
+  align-items: center; /* Centra los elementos horizontalmente */
+}
+.integrantes {
+  text-align: center; /* Centra el texto del letrero */
+  margin: 20px 0; /* Espacio arriba y abajo del letrero */
+}
+.contactenos-img {
+  width: 30px;
+  height: 30px;
+}
+
+.fotos-container {
+  display: flex; /* Utiliza flexbox para las fotos */
+  justify-content: center; /* Centra las fotos horizontalmente */
+  flex-wrap: wrap; /* Permite que las fotos se envuelvan si no hay suficiente espacio */
+  max-width: 1200px; /* Ancho máximo del contenedor de fotos */
+}
+
+.persona {
+  text-align: center; /* Centra el texto del nombre */
+  margin: 10px; /* Espacio entre cada persona */
+  flex: 1 1 200px; /* Cada foto ocupa un espacio flexible */
+}
+
+.foto {
+  width: 100px; /* Ajusta el tamaño de la imagen */
+  height: auto; /* Mantiene la proporción de la imagen */
+  border-radius: 50%; /* Hace que la imagen sea circular */
+  border: 2px solid black; /* Añade un borde negro */
+} 
+
+.body-sn {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container-sn {
+    width: 90%;
+    max-width: 600px;
+    margin: 50px 0;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.container-img-sn {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.container-h3-sn {
+    margin-top: 15px;
+    font-size: 1.5em;
+    color: #333;
+}
+
+/* Clase que se activa cuando el elemento entra en la vista */
+.visible-sn {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Estilos productos */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+  
+  h1, h2 {
+    color: #333;
+    text-align: center;
+  }
+  
+  header {
+    background-color: #1E90FF;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+  }
+  
+  header .banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  header img {
+    height: 50px;
+  }
+  
+  header nav {
+    display: flex;
+  }
+  
+  header .menu {
+    display: flex;
+    gap: 15px;
+  }
+  
+  header .menu-item {
+    position: relative;
+  }
+  
+  header .menu-item a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+  }
+  
+  header .dropdown {
+    display: none;
+    position: absolute;
+    background-color: #1E90FF;
+    top: 40px;
+    left: 0;
+    width: 150px;
+  }
+  
+  header .menu-item:hover .dropdown {
+    display: block;
+  }
+  
+  header .dropdown a {
+    padding: 10px;
+  }
+  
+  /* Sección de productos */
+  .div-principal {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .productos {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
+  .producto {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 300px;
+    padding: 15px;
+    margin: 15px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .producto:hover {
+    transform: translateY(-5px);
+  }
+  
+  .producto img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+  .producto h2 {
+    color: #333;
+    font-size: 18px;
+    margin: 10px 0;
+  }
+  
+  .producto p {
+    font-size: 16px;
+    color: #666;
+  }
+  
+  .producto button {
+    background-color: #1E90FF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .producto button:hover {
+    background-color: #104E8B;
+  }
+  
+  /* Carrito de compras */
+  #carrito {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    max-width: 400px;
+    margin: 20px auto;
+  }
+  
+  #carrito div {
+    margin-bottom: 10px;
+  }
+  
+  #carrito button {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+  #carrito button:hover {
+    background-color: #ff1a1a;
+  }
+  
+  #carrito strong {
+    font-size: 18px;
+    color: #333;
+  }
+  
+/* Estilos de la pagina de Cotización.*/
+
+.div-principal-ctz{
+  background-color: rgba(255, 255, 255, 0.747);
+  width: 60%;
+  height: 60%;            
+  border: 1px solid #ddd;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+  border-radius: 15px;
+  padding: 30px;
+  border: rgba(255, 255, 255, 0.747);
+  font-size: 20px;
+  }
+
+input[type="text"], input[type="email"], input[type="number"], 
+select {
+  width: 100%; /* Hace que el input ocupe el 100% del contenedor */
+  padding: 10px; /* Añade espacio interior */
+  border: 1px solid #ccc; /* Bordes del campo */
+  border-radius: 5px; /* Bordes redondeados */
+  box-sizing: border-box; /* Hace que el padding y el ancho se incluyan dentro del 100% */
+  margin-top: 10px; /* Espacio superior */
+  margin-bottom: 5px; /* Espacio inferior */
+  font-size: 16px; /* Tamaño del texto */
+}
+
+/* Estilo específico para el campo select (desplegable) */
+select {
+  width: 100%; /* Igual que los otros campos, ocupa el 100% del ancho del contenedor */
+  padding: 10px; /* Espacio interno dentro del campo, para una mejor visualización del texto */
+  border: 1px solid #ccc; /* Borde gris claro alrededor del select */
+  border-radius: 5px; /* Bordes redondeados para hacer que el campo se vea más amigable */
+  box-sizing: border-box; /* Incluye el padding y borde dentro del ancho total del select */
+  margin-top: 10px; /* Espacio superior de 10px para separarlo del elemento anterior */
+  margin-bottom: 20px; /* Espacio inferior de 20px para separarlo del siguiente elemento */
+  font-size: 16px; /* Tamaño de fuente uniforme con el resto de los campos */
+}
+
+/* Estilo para el campo textarea (área de texto de múltiples líneas) */
+textarea {
+  width: 100%; /* El campo ocupará todo el ancho disponible */
+  padding: 10px; /* Espacio interno dentro del área de texto para que el texto no esté pegado a los bordes */
+  border: 1px solid #ccc; /* Aplica un borde gris claro alrededor del área de texto */
+  border-radius: 5px; /* Redondea las esquinas del área de texto */
+  box-sizing: border-box; /* Incluye el padding y borde dentro del ancho total del textarea */
+  margin-top: 10px; /* Espacio superior de 10px para separarlo del elemento anterior */
+  margin-bottom: 20px; /* Espacio inferior de 20px para separarlo del siguiente elemento */
+  font-size: 16px; /* Tamaño de fuente de 16px, igual que los otros campos */
+}
+
+.button {
+    background-color: #4CAF50; /* Color de fondo del botón */
+    color: #000000; /* color del texto dentro del botón */
+    padding: 10px 20px; /* Espacio dentro del botón Finalizar */
+    border: none; /* Se deja en none porque se elimina el borde por defecto */
+    border-radius: 5px; /* Este es el radio para redondear las esquinas de los botones o campos */
+    cursor: pointer; /* Indica cuando se le debe dar click a una sección */
+    font-size: 16px;
+  }
+
+/* Aumenta el tamaño visual del checkbox */
+input[type="checkbox"] {
+  transform: scale(2.0); /* Escala el tamaño del checkbox a 1.5 veces su tamaño original */
+  margin-right: 10px; /* Añade espacio a la derecha para separar la etiqueta del checkbox */
+}
+
+.button:hover {
+    background-color: #1E90FF; /* Es el color del que se pone el botón cuando uno clickea el botón Finalizar */
+  }
+  
+  .TablaProductos{
+      padding: 5px;
+      align-items: center;
+  }

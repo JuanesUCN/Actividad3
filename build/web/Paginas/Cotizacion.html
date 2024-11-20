@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ColSports - Cotización</title>
+    <link rel="icon" href="../Imagenes/Logo.jpeg" type="image/x-icon">
+    <link rel="stylesheet" href="../Styles/style_IndexPage.css" />
+  </head>
+  <body>
+    <header>
+        <div class="banner">
+            <img class="banner-img" src="../Imagenes/Logo.jpeg" alt="Logo Tienda" id="logo"/>
+            <h1>Cotización - ColSports</h1>
+
+            <nav class="menu">
+            <div class="menu-item">
+                <a href="../index.html">Inicio</a>
+            </div>
+            <div class="menu-item">
+                <a href="FormularioCuento.jsp">Generar Cuento</a>
+            </div>
+            <div class="menu-item">
+                <a href="#">Productos</a>
+                    <div class="dropdown">
+                        <a href="Productos/futbol.html">Futbol</a>
+                        <a href="Productos/baloncesto.html">Baloncesto</a>
+                        <a href="Productos/voleibol.html">Voleibol</a>
+                    </div>
+            </div>
+            <div class="menu-item">
+                <a href="Contactenos.html">Contactenos</a>
+            </div>
+            <div class="menu-item">
+                <a href="Cotizacion.html">Solicitud de Cotización</a>
+            </div>
+            </nav>
+        </div>
+    </header>
+    <br>
+
+    <div class="div-principal-ctz">
+        
+        <section id="cotizacion">
+            <h1>Escribe tus datos de contacto.</h1>
+            
+            <form id="Cotizacion" action="Cotizacion.jsp" method="get">
+                <!--<label for="nombre">Nombre y apellido:</label><br><br>-->
+                <input type="text" id="nombre" name="nombre" placeholder="Nombre y Apellido" required><br><br>
+                
+                <!--<label for="nombre">Ciudad</label><br><br>-->
+                <input type="text" id="Ciudad" name="Ciudad" required><br><br>
+                <input type="submit" value="" />
+                <!--<label for="nombre">Direccion:</label><br><br>-->
+                <input type="text" id="Direccion" name="Direccion" placeholder="Direccion" required><br><br>
+                
+                <!--<label for="nombre">Número de celular:</label><br><br>-->
+                <input type="number" id="celular" name="celular" placeholder="Celular" required><br><br>                
+
+            <!--<label for="producto">Producto de interés:</label><br><br>-->
+            <select id="producto" name="producto" required>
+                <option value="futbol">Fútbol</option><br><br>
+                <option value="baloncesto">Baloncesto</option><br><br>
+                <option value="voleibol">Voleibol</option><br><br>
+            </select>
+
+            <br><br><label for="comentarios">Comentarios:</label><br><br>
+            <textarea id="comentarios" name="comentarios" rows="10" placeholder="Escriba sus comentarios aquí..."></textarea>
+            
+            <input class="button" type="submit" value="Enviar">
+            
+            </form>
+
+        </section>
+               
+            <!--<button type="button" onclick="finalizarCotizacion()">Finalizar</button>-->
+        
+
+    </div>
+
+    <script>
+        function finalizarCotizacion() {
+            alert("¡Gracias! Se ha enviado un correo electrónico con toda la información. En breves momentos uno de nuestros asesores se comunicará usted.");
+
+            document.getElementById('nombre').value = "";
+            document.getElementById('email').value = "";
+            document.getElementById('celular').value = "";
+            document.getElementById('cotizacion').value = "";
+        }
+    </script>
+
+  </body>
+</html>
